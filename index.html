@@ -6,6 +6,7 @@
   <title>Discord Bot Systems</title>
   <link rel="icon" type="image/png" href="logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     html {
       scroll-behavior: smooth;
@@ -34,28 +35,28 @@
   </section>
 
   <!-- CREPS -->
-  <section id="creps" class="py-16 bg-gray-900 text-center">
+  <section id="creps" class="py-16 bg-gray-900 text-center" data-aos="fade-right">
     <h3 class="text-3xl font-semibold text-purple-400 mb-2">🟣 CREPS Systems</h3>
     <p class="max-w-xl mx-auto mb-6">Der Bot für Community-Management, Moderation, Logging und individuelle Commands.</p>
     <a href="https://discord.gg/S2apzd343K" target="_blank" class="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-full text-white font-semibold transition duration-300">Zu CREPS einladen</a>
   </section>
 
   <!-- Nordlicht -->
-  <section id="nordlicht" class="py-16 bg-gray-800 text-center">
+  <section id="nordlicht" class="py-16 bg-gray-800 text-center" data-aos="fade-left">
     <h3 class="text-3xl font-semibold text-blue-400 mb-2">🔵 Nordlicht System</h3>
     <p class="max-w-xl mx-auto mb-6">Perfekt für Musik, Radio, Unterhaltung & interaktive Spiele direkt im Chat.</p>
     <a href="#" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-white font-semibold transition duration-300">Invite folgt bald</a>
   </section>
 
   <!-- Nebula -->
-  <section id="nebula" class="py-16 bg-gray-900 text-center">
+  <section id="nebula" class="py-16 bg-gray-900 text-center" data-aos="fade-right">
     <h3 class="text-3xl font-semibold text-cyan-400 mb-2">🌌 Nebula Systems</h3>
     <p class="max-w-xl mx-auto mb-6">Dein All-in-One Bot für Server-Security, Auto-Rollen, Ticket-Support und vieles mehr.</p>
     <a href="#" class="bg-cyan-600 hover:bg-cyan-700 px-6 py-2 rounded-full text-white font-semibold transition duration-300">Invite folgt bald</a>
   </section>
 
   <!-- Kontakt -->
-  <section id="kontakt" class="py-16 bg-gray-800 text-center">
+  <section id="kontakt" class="py-16 bg-gray-800 text-center" data-aos="fade-up">
     <h3 class="text-3xl font-semibold text-green-400 mb-2">📬 Kontakt</h3>
     <p class="mb-4">Fragen, Feedback oder Feature-Wünsche?</p>
     <a href="mailto:kundendialog@bot.hustensaft.org" class="underline hover:text-green-300">kundendialog@bot.hustensaft.org</a>
@@ -66,5 +67,30 @@
     © 2025 CREPS • Nordlicht • Nebula – alle Rechte vorbehalten.
   </footer>
 
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #222; color: white; padding: 10px; text-align: center; font-size: 14px; z-index: 1000;">
+    <p style="margin: 0;">
+      Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. Durch die Nutzung dieser Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <a href="/datenschutz" style="color: #4CAF50;">Datenschutzerklärung</a>.
+      <button id="accept-cookies" style="background-color: #4CAF50; color: white; border: none; padding: 5px 10px; cursor: pointer;">Akzeptieren</button>
+    </p>
+  </div>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+
+    document.getElementById('accept-cookies').onclick = function() {
+      document.getElementById('cookie-banner').style.display = 'none';
+      localStorage.setItem('cookiesAccepted', 'true');
+    };
+
+    if (localStorage.getItem('cookiesAccepted') === 'true') {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
