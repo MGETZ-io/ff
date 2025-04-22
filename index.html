@@ -11,6 +11,53 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* Custom Cookie Banner */
+    #cookie-banner {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      font-size: 16px;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    #cookie-banner p {
+      text-align: center;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    #cookie-banner a {
+      color: #4CAF50;
+      text-decoration: underline;
+    }
+
+    #accept-cookies {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    #accept-cookies:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body class="bg-gray-950 text-white font-sans">
@@ -68,10 +115,10 @@
   </footer>
 
   <!-- Cookie Banner -->
-  <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #222; color: white; padding: 10px; text-align: center; font-size: 14px; z-index: 1000;">
-    <p style="margin: 0;">
-      Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. Durch die Nutzung dieser Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <a href="/datenschutz" style="color: #4CAF50;">Datenschutzerklärung</a>.
-      <button id="accept-cookies" style="background-color: #4CAF50; color: white; border: none; padding: 5px 10px; cursor: pointer;">Akzeptieren</button>
+  <div id="cookie-banner">
+    <p>
+      Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. Durch die Nutzung dieser Website stimmen Sie der Verwendung von Cookies zu. Weitere Informationen finden Sie in unserer <a href="/datenschutz">Datenschutzerklärung</a>.
+      <button id="accept-cookies">Akzeptieren</button>
     </p>
   </div>
 
